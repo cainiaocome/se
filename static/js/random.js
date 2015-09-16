@@ -1,0 +1,1 @@
+$(document).ready(function(){var images=['e9270e91caa31298.jpg','3d629551ffebee2f.jpg','4df6ce0ff202559c.jpg'];$('.new-home').css({'background-image':'url(http://i4.tietuku.com/'+ images[Math.floor(Math.random()*images.length)]+')'});});
