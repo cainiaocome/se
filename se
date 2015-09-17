@@ -1,0 +1,14 @@
+# apache site file
+<VirtualHost *:80>
+    ServerName se.com
+
+    WSGIDaemonProcess se 
+    WSGIScriptAlias / /var/www/se/se.wsgi
+
+    <Directory /var/www/se>
+        WSGIProcessGroup se
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+   </Directory>
+</VirtualHost>
