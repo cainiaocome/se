@@ -30,7 +30,7 @@ def search():
     #for x in kw:
     #    if x not in whitelist:
     #        return redirect(url_for('fuck'))
-    ix = open_dir('/tmp/indexdir')
+    ix = open_dir('/var/indexdir')
     searcher = ix.searcher()
     q = Term('name', kw)
     results = searcher.search(q)
