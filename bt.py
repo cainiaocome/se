@@ -21,11 +21,13 @@ def index():
 
 @app.route('/fuck')
 def fuck():
-    return 'fuck you, {}'.format(request.remote_addr)
+    return 'get away, man, {}'.format(request.remote_addr)
 
 @app.route('/search', methods=['get'])
 def search():
     kw = request.args.get('kw', '')
+    if kw=='':
+        return redirect(url_for('fuck'))
     kw = kw.split()[0]
     #for x in kw:
     #    if x not in whitelist:
@@ -41,4 +43,4 @@ def search():
 
 if __name__=='__main__':
     # be careful, remember to disable debug before taking online
-    app.run('0.0.0.0', debug=True)
+    app.run('0.0.0.0', debug=False)
